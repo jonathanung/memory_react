@@ -1,0 +1,77 @@
+* {
+    font-family: Helvetica, sans-serif;
+    background-color: #EFB51A;
+    color: #4A1C1E;
+}
+
+#Gameboard {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    margin: 3px;
+    width: 4%;
+}
+
+.Start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    /* font-size: 120px; */
+    font-size: 5vw;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.25vw;
+    margin-top: 0px;
+}
+
+button {
+    font-size: 4vw;
+    margin: 25px;
+    padding: 5px 15px 5px 15px;
+}
+
+button:hover {
+    font-size: 5vw;
+    background-color: #D5631B;
+}
+
+button:active {
+    background-color: #353B34; 
+}
+
+.user-score > * {
+    display: inline;
+}
+
+/* .timer{
+    width: 600px;
+    height: 100px;
+    border: 2px solid black;
+
+    font-size: 30px;
+
+    display: flex;
+    justify-content: right;
+}
+
+.timer span {
+    margin-left: 5px;
+    margin-right: 5px; 
+} */
+
