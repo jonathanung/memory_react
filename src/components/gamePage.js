@@ -32,15 +32,17 @@ const GamePage = () => {
 
     const getNewDeck = () => {
         const cCount = (level + 1) * 2;
-        const rCount = parseInt(level/2) * 2;
+        const rCount = Math.ceil9
+            (level / 2) * 2;
         setCurrDeck(getSet(cCount, rCount));
         // console.log(currDeck);`
     }
 
     const newLevel = () => {
-        setLevel(level+1);
+        setLevel(level + 1);
         getNewDeck();
         modCounter((level + 1) * 1500);
+        console.log(level);
         // console.log(counter);
     }
 

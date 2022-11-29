@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect }  from 'react';
+import { useState}  from 'react';
 import "../App.css";
 import DisplayCard from './displayCard';
 import LastPair from './LastPair';
@@ -24,7 +24,7 @@ const Play = (props) => {
             } else {
                 props.modCounter(200)
                 props.addScore();
-                // props.checkFin();
+                props.checkFin();
 
             }
             setHold(undefined);
@@ -33,9 +33,9 @@ const Play = (props) => {
         // console.log(hold);
     };
 
-    useEffect(() => {
-        props.checkFin();
-    }, [props])
+    // useEffect(() => {
+    //     props.checkFin();
+    // }, [props])
 
     return (
             <div>
