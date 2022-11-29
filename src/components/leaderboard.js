@@ -47,7 +47,7 @@ export default function Leaderboard(props) {
                     <div className="user-score-header">
                         <h2>Format -&gt; User : Score</h2>
                     </div>
-                    {console.log(scores)}
+                    {/* {console.log(scores)} */}
                     {scores.map((score, i) => {
                         return (
                             <div key={i} className="user-score">
@@ -61,6 +61,17 @@ export default function Leaderboard(props) {
             return (
                 <div className="leaderboard">
                     <h1>Leaderboard</h1>
+                                        <div className="user-score-header">
+                        <h2>Format -&gt; User : Score</h2>
+                    </div>
+                    {/* {console.log(scores)} */}
+                    {scores.map((score, i) => {
+                        return (
+                            <div key={i} className="user-score">
+                                <h3>{i + 1} -&gt; {score.name} : {score.score}</h3>
+                            </div>
+                        )
+                    })}
                 </div>
             )
         }
