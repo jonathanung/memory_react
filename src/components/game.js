@@ -1,21 +1,16 @@
 import React from 'react'
-import { useState }  from 'react';
 import "../App.css"
-import getSet from './getSet';
-import Card from "./Cardvalue";
-import GameLoss from './GameLoss';
 
-const Game = () => {
-    const [deck, setDeck] = useState(getSet(20, 8))
+const Game = (props) => {
     return (
             <div>
-                <div id="Gameboard">
-                {deck.map((row, i) => {
+                <div id="gameboard">
+                {props.deck.map((row, i) => {
                     return (
-                        <div className="row">
+                        <div className="row"  id={"row-" + i} key={i}>
                             {row.map((card, j) => {
                             return (
-                                <img className="card" src={`${process.env.PUBLIC_URL}/assets/images/cards/` + card.url} alt="your mom"></img>
+                                <img key={j}  className="card" src={`${process.env.PUBLIC_URL}/assets/images/cards/` + card.url} alt="your mom"></img>
                             )
                         })}
                         </div>
