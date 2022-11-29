@@ -14,23 +14,19 @@ const Play = (props) => {
     const isFlip = async(i, j) => {
         if (hold === undefined) {
             setHold(deck[i][j]);
-            setLastPair([[deck[i][j], i+1, j+1]])
+            setLastPair([[deck[i][j], i + 1, j + 1]])
         } else {
             if (hold.url !== deck[i][j].url) {
                 hold.flip();
                 deck[i][j].flip();
-                props.modCounter(-100)
+                props.modCounter(-200)
                 // window.location.reload(false);
             } else {
                 props.modCounter(200)
                 props.addScore();
-//                 props.checkFin();
-
             }
-            setHold(undefined);
-            setLastPair([...lastPair, [deck[i][j], i + 1, j + 1]])
+            // console.log(hold);
         }
-        // console.log(hold);
     };
 
     useEffect(() => {
