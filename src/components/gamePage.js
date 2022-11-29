@@ -33,7 +33,6 @@ const GamePage = () => {
     const getNewDeck = () => {
         const cCount = (level + 1) * 2;
         const rCount = Math.ceil(level / 2) * 2;
-            (level / 2) * 2;
         setCurrDeck(getSet(cCount, rCount));
         // console.log(currDeck);`
     }
