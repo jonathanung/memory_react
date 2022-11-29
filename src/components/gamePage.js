@@ -3,14 +3,16 @@ import Overlay from './overlay';
 import Play from './play';
 import getSet from './getSet';
 import GameLoss from './GameLoss';
+import Game from './game';
 
 const GamePage = () => {
-    const [counter, setCounter] = useState(2000);
+    const [counter, setCounter] = useState(1300);
     const [level, setLevel] = useState(1);
     const [score, setScore] = useState(0);
     const [loss, setLoss] = useState(false);
     const [currDeck, setCurrDeck] = useState(getSet(4, 2));
     const [incr, setIncr] = useState(false);
+    const [timer, setTimer] = useState(300);
 
     const checkFin = () => {
         let isFin = true;
@@ -40,8 +42,9 @@ const GamePage = () => {
     const newLevel = () => {
         setLevel(level + 1);
         getNewDeck();
-        modCounter((level + 1) * 1500);
-        console.log(level);
+        modCounter(((level + 1) * 1000) + ((level*50) + 300));
+        setTimer((level*50) + 300);
+        // console.log(level);
         // console.log(counter);
     }
 
@@ -62,13 +65,21 @@ const GamePage = () => {
             setIncr(false);
         }
         counter > 0 && setTimeout(() => setCounter(counter - 1), 10);
+        timer > 0 && setTimeout(() => setTimer(timer - 1), 10);
         if (counter === 0) {
             triggerLoss()
             console.log("lost!");
         }
     }, [counter]);
-
-    if (!loss) {
+    if (!loss && timer) {
+        return (<div id="gamePage">
+                <Overlay counter={counter} />
+                <h3>Score {score}</h3>
+                <h1>Level {level}</h1>
+                <Game deck={currDeck} />
+            </div>)
+    }
+    else if (!loss) {
         return (
             <div id="gamePage">
                 <Overlay counter={counter} />
