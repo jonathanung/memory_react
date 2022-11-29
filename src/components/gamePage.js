@@ -70,7 +70,7 @@ const GamePage = () => {
             triggerLoss()
             console.log("lost!");
         }
-    }, [counter]);
+    }, [counter, timer]);
     if (!loss && timer) {
         return (<div id="gamePage">
                 <Overlay counter={counter} />
