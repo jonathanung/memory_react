@@ -26,6 +26,8 @@ const Play = (props) => {
                 props.addScore();
             }
             // console.log(hold);
+            setHold(undefined);
+            setLastPair([...lastPair, [deck[i][j], i + 1, j + 1]])
         }
     };
 
