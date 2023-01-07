@@ -1,4 +1,4 @@
-Deployed on https://jjsn-memory-react.herokuapp.com/
+This project is no longer deployed as it uses a lot of memory on the server end.
 
 # Getting Started with Create React App
 
